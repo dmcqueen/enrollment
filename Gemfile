@@ -6,6 +6,7 @@ gem 'journey', '~> 1.0.0.rc1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
+gem 'thin'
 gem 'awesome_print'
 gem 'pg'
 gem 'dalli'
