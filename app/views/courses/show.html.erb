@@ -1,0 +1,30 @@
+<div id="header">
+  <h1>Course Record</h1>
+</div>
+
+<div id="links">
+  <h3>
+    <%= link_to 'New Course', new_course_path, :class => 'link_remote', :remote => true %> |
+    <%= link_to 'Edit', edit_course_path(@course), :class => 'link_remote', :remote => true  %> |
+    <%= link_to 'Back', courses_path, :class => 'link_remote', :remote => true %>
+  </h3>
+</div>
+
+<p id="notice"><%= @notice %></p>
+
+<div id="show">
+<p>
+  <b>Name:</b>
+  <%= @course.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @course.description %>
+</p>
+
+<p>
+  <b>Teacher:</b>
+  <%= @course.teacher.name %>
+</p>
+</div>

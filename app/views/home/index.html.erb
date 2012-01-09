@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rails Demo - Enrollment System - by Dave McQueen</title>
+  </head>
+  <body>
+    <div id="page">
+      <div id="sidebar">
+        <ul id="sidebar-items">
+          <li>
+            <h3><a id="home_logo" href="/">Enrollment System</a></h3>
+            <ul class="links">
+              <li><strong>Users</strong></li>
+              <li><%= link_to 'Students', students_path, :class => 'link_remote', :remote => true %></li>
+              <li><%= link_to 'Teachers', teachers_path, :class => 'link_remote', :remote => true %></li>
+              <li><%= link_to 'Administrators', administrators_path, :class => 'link_remote', :remote => true %></li>
+              <li>&nbsp;</li>
+              <li><strong>Classes</strong></li>
+              <li><%= link_to 'Courses', courses_path, :class => 'link_remote', :remote => true %></li>
+              <li><%= link_to 'Periods', periods_path, :class => 'link_remote', :remote => true %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div id="content">
+        <div id="header">
+          <h1>Enrollment System</h1>
+          <h2>Rails Demo by <a href="mailto:dmcqueen@gmail.com" >Dave McQueen</a></h2>
+        </div>
+
+        <div id="about">
+          <h3><a href="https://github.com/dmcqueen" target="_blank" >GitHub</a></h3>
+          <div id="about-content" style="display: none"></div>
+        </div>
+
+        <div id="getting-started">
+          <h1>Project Goals</h1>
+
+          <ol>
+            <li>
+              <h2>Demonstrate Single Table Inheritance.</h2>
+              <p>Build a hierachy of <code>User</code> types with various one-to-many and many-to-many associations between the subclasses and <code>Courses</code> and <code>Periods</code>.</p>
+            </li>
+
+            <li>
+              <h2>Use Unintrusive JS and HTML5 for AJAX</h2>
+              <p>Utilize the new Rails JQuery library jquery_ujs.js and the HTML5 data-remote attribute to cleanly implement AJAX.</p>
+            </li>
+
+            <li>
+              <h2>Create a LaunchPad</h2>
+              <p>Give the world a working demo on Heroku and a repo on GitHub. Thats how we do in "twenty one two".</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <%= render 'footer' %>
+
+    </div>
+
+  </body>
+</html>

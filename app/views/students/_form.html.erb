@@ -1,0 +1,38 @@
+<%= form_for(@student, {:remote => true} ) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this #{f.type} from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.number_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :ssn %><br />
+    <%= f.number_field :ssn %>
+  </div>
+  <div class="field">
+    <%= f.label :periods %><br />
+    <%= select_tag("period_ids[]", options_for_select(Period.find(:all).collect { |period| [period.hours, period.id] }, @student.periods.collect { |period| period.id}), {:multiple=>true, :size=>6})%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

@@ -1,0 +1,33 @@
+<%= form_for(@period, {:remote => true}) do |f| %>
+  <% if @period.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@period.errors.count, "error") %> prohibited this period from being saved:</h2>
+
+      <ul>
+      <% @period.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hours %><br />
+    <%= f.select :hours, ['8:00 AM - 9:30 AM', '9:30 AM - 11:00 AM', '1:00 PM - 2:30 PM', '2:30 PM - 4:00 PM'], :selected => @period.hours %>
+  </div>
+  <div class="field">
+    <%= f.label :quarter %><br />
+    <%= f.select :quarter, ['Winter', 'Spring', 'Summer', 'Fall'], :selected => @period.quarter %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.select :year, ['2011','2012','2013','2014'], :selected => @period.year %>
+  </div>
+  <div class="field">
+    <%= f.label :course %><br />
+    <%= f.select :course, Course.find(:all).collect{|course| [course.name,course.id]}, :selected => (@period.course.id unless @period.course.nil?) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

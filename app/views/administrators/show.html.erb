@@ -1,0 +1,36 @@
+<div id="header">
+  <h1>Administrator Record</h1>
+</div>
+
+<div id="links">
+  <h3>
+    <%= link_to 'New Administrator', new_administrator_path, :class => 'link_remote', :remote => true %> |
+    <%= link_to 'Edit', edit_administrator_path(@administrator), :class => 'link_remote', :remote => true  %> |
+    <%= link_to 'Back', administrators_path, :class => 'link_remote', :remote => true %>
+  </h3>
+</div>
+
+<p id="notice"><%= @notice %></p>
+
+<div id="show">
+<li>
+  <b>Name:</b>
+  <%= @administrator.name %>
+</li>
+
+<li>
+  <b>Email:</b>
+  <%= @administrator.email %>
+</li>
+
+<li>
+  <b>Phone:</b>
+  <%= @administrator.phone %>
+</li>
+
+
+<li>
+  <b>Ssn:</b>
+  <%= @administrator.ssn %>
+</li>
+</div>

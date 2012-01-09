@@ -1,0 +1,28 @@
+<div id="header">
+  <h1>Listing Courses</h1>
+</div>
+
+<div id="links">
+  <h3><%= link_to 'New Course', new_course_path, :class => 'link_remote', :remote => true %></h3>
+</div>
+
+<p id="notice"><%= @notice %></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @courses.each do |course| %>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td><%= course.name %></td>
+    <td><%= link_to 'Show', course, :class => 'link_remote', :remote => true  %></td>
+    <td><%= link_to 'Edit', edit_course_path(course), :class => 'link_remote', :remote => true %></td>
+    <td><%= link_to 'Delete', course, confirm: 'Are you sure?', :method => :delete, :remote => true, :class => 'link_remote_delete' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

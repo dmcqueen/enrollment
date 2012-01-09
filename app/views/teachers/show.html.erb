@@ -1,0 +1,50 @@
+<div id="header">
+  <h1>Teacher Record</h1>
+</div>
+
+<div id="links">
+  <h3>
+    <%= link_to 'New Teacher', new_teacher_path, :class => 'link_remote', :remote => true %> |
+    <%= link_to 'Edit', edit_teacher_path(@teacher), :class => 'link_remote', :remote => true  %> |
+    <%= link_to 'Back', teachers_path, :class => 'link_remote', :remote => true %>
+  </h3>
+</div>
+
+<p id="notice"><%= @notice %></p>
+
+<div id="show">
+<li>
+  <b>Name:</b>
+  <%= @teacher.name %>
+</li>
+
+<li>
+  <b>Email:</b>
+  <%= @teacher.email %>
+</li>
+
+<li>
+  <b>Phone:</b>
+  <%= @teacher.phone %>
+</li>
+
+
+<li>
+  <b>Ssn:</b>
+  <%= @teacher.ssn %>
+</li>
+
+  <h3> Teaching Courses</h3>
+  <% @teacher.courses.each do |course| %>
+    <li><strong><%= course.name %></strong></li>
+    <% periods = Period.where("course_id = #{course.id}") 
+       periods.each do |period|
+     %> 
+      &nbsp;&nbsp;<%= period.year %>, <%= period.quarter %> <%= period.hours %><br>
+    <% end %>
+      <% if periods.empty? %>&nbsp;&nbsp;No Periods Yet<br><% end  %>
+    <br>
+  <% end %>
+
+</div>
+

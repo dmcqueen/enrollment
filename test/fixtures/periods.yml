@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hours: MyString
+  quarter: MyString
+  year: 1
+  course: 
+
+two:
+  hours: MyString
+  quarter: MyString
+  year: 1
+  course: 
