@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>Rails Demo - Enrollment System - by Dave McQueen</title>
+    <script>
+      enroll.gaAcct = "<%= (ENV["RAILS_ENV"] == "production" ? "UA-28189283-1" : "")  %>";
+    </script>
   </head>
   <body>
     <div id="page">
