@@ -13,7 +13,7 @@ describe 'create student page with the happy case' do
 end
 
 describe 'create student page with missing data' do
-  it 'ties to create a student with all fields missing', :js => true do
+  it 'tries to create a student with all fields missing', :js => true do
     visit new_student_path
     click_on 'Create Student'  
     page.should have_content('fields required')
