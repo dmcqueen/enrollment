@@ -8,7 +8,7 @@ gem 'journey', '~> 1.0.0.rc1'
 
 gem 'thin'
 gem 'awesome_print'
-gem 'pg'
+gem 'pg', '0.14.0'
 gem 'dalli'
 
 
@@ -38,3 +38,9 @@ group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
 end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+
