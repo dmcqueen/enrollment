@@ -15,4 +15,4 @@ Test Automation
 ## 
 ***
 See live demo on Heroku [here](http://enrollment.herokuapp.com)  
-&copy; 2012 [Dave McQueen](dmcqueen@gmail.com)
+&copy; 2012 dmcqueen@gmail.com
